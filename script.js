@@ -1,30 +1,25 @@
-// functions
-function removeTransition(e) {
-  var key = e.target; // variables
-  key.classList.remove('playing'); // methods/function
-}
+var keysNodeList = document.querySelectorAll(".key");
+var keysArray = Array.from(keysNodeList);
 
-function playSound(e) {
+// event listener
+document.addEventListener("keydown", function(e) { // explain this placeholder better
   var keyCode = e.keyCode;
 
   // dom manipulation
   var audio = document.querySelector("audio[id='" + keyCode + "']");
-  var key = document.querySelector("div[id='" + keyCode + "']");
+  var key = document.querySelector(".key[id='" + keyCode + "']");
 
   key.classList.add('playing');
   audio.currentTime = 0;
   audio.play();
-}
-
-var keysNodeList = document.querySelectorAll(".key");
-var keys = Array.from(keysNodeList);
-
-// event listener
-document.addEventListener("keydown", playSound);
+});
 
 // array method
-keys.forEach(function (key) {
-  key.addEventListener('transitionend', removeTransition);
+keysArray.forEach(function (key) {
+  key.addEventListener('transitionend', function(e) {
+    var key = e.target;
+    key.classList.remove('playing');
+  });
 });
 
 
