@@ -6,11 +6,21 @@
 
 body {
     font-size: 10px;
-  background: -webkit-linear-gradient(to top, #1a284f 0%, #2b1b37 100%);
-  background: -moz-gradient(to top, #1a284f 0%, #2b1b37 100%);
-  background: linear-gradient(to top, #1a284f 0%, #2b1b37 100%);
+  background: rgb(46,17,97);
+  background: -moz-linear-gradient(352deg, rgba(46,17,97,1) 0%, rgba(29,38,74,1) 100%);
+  background: -webkit-linear-gradient(352deg, rgba(46,17,97,1) 0%, rgba(29,38,74,1) 100%);
+  background: linear-gradient(352deg, rgba(46,17,97,1) 0%, rgba(29,38,74,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2e1161",endColorstr="#1d264a",GradientType=1);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+body.day {
+  background: rgb(238,184,18);
+  background: -moz-linear-gradient(352deg, rgb(245, 151, 29) 0%, rgb(250, 113, 59) 100%);
+  background: -webkit-linear-gradient(352deg, rgb(245, 151, 29)0%, rgb(250, 113, 59)100%);
+  background: linear-gradient(352deg, rgb(245, 151, 29) 0%, rgb(250, 113, 59) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeb812",endColorstr="#f65212",GradientType=1);
 }
 
 .wrapper {
@@ -44,6 +54,10 @@ body {
     transition: all .12s ease-in-out;
 }
 
+.day {
+  border-color: rgb(250, 229, 110);
+}
+
 .key p {
     font-family: 'Monoton', cursive;
     font-size: 30px;
@@ -63,6 +77,12 @@ body {
     -webkit-transform: skew(35deg,-4deg);
 }
 
+.key span.day {
+  -webkit-text-fill-color: rgba(rgb(255, 115, 0));
+  text-shadow: -2px -2px 0 rgb(250, 71, 0);
+  -webkit-filter: drop-shadow(3px 3px 1px rgb(182, 134, 1));
+}
+
 
 /* Modes styling */
 .modes {
@@ -77,6 +97,10 @@ body {
   font-size: 40px;
   margin: 20px;
   cursor: pointer;
+}
+
+.modes i.day {
+  color: rgb(250, 229, 110);
 }
 
 i.disabled {
@@ -111,6 +135,12 @@ i.disabled {
   margin-left: 0px;
 }
 
+.future.day {
+  -webkit-text-fill-color: rgba(rgb(255, 115, 0));
+  text-shadow: -2px -2px 0 rgb(250, 71, 0);
+  -webkit-filter: drop-shadow(3px 3px 1px rgb(182, 134, 1));
+}
+
 .cop {
   font-family: 'Monoton', cursive;
   font-size: 170px;
@@ -122,6 +152,10 @@ i.disabled {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px #fff;
+}
+
+.cop.day {
+    background-image: -webkit-linear-gradient(#dd6a0b 0%, rgb(211, 180, 8) 30%, rgb(246, 252, 189) 40%, rgb(255, 230, 216) 44%, rgb(235, 31, 31) 44%, rgb(221, 113, 12) 50%, rgb(209, 66, 23) 52%, rgb(254, 182, 28) 60%, rgb(254, 178, 127) 62%, rgb(248, 155, 101) 70%, rgb(253, 196, 10) 73%, rgb(253, 100, 11) 88%, rgb(254, 255, 175) 100%);
 }
 
 .cop {
@@ -169,6 +203,13 @@ i.disabled {
   border-color: #0FD8FA;
   box-shadow: 0 0 1rem #0FD8FA;
   background-color: #1d2d5a;
+}
+
+.dayplaying {
+  transform: scale(1.15);
+  border-color: #FFFF54;
+  box-shadow: 0 0 1rem #FFFF54;
+  background-color: #eb5008;
 }
 
 @-webkit-keyframes cop_before_effect {
